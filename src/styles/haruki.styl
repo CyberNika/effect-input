@@ -1,0 +1,60 @@
+
+padding-horizontal = 15px
+field-font-size = 26px
+label-padding-vertical = (input-height - label-font-size) / 2
+lebel-decorate-active-translateY = 10px
+input-margin-top = label-font-size + lebel-decorate-active-translateY * 2 + 5
+label-active-translateY = -(input-height / 2 + label-font-size + lebel-decorate-active-translateY)
+
+.su-input--haruki
+  margin-top: input-margin-top
+
+  .su-input__field
+    position: relative
+    padding: 0 padding-horizontal
+    background: transparent
+    color: #afb5bb
+    font-size: field-font-size
+
+  .su-input__label
+    position: absolute
+    top: 0
+    display: block
+    padding: label-padding-vertical padding-horizontal
+    width: 100%
+    height: input-height
+    color: #6a7989
+    pointer-events: none
+
+    &::before,
+    &::after
+      content: ""
+      position: absolute
+      left: 0
+      z-index: -1
+      width: 100%
+      height: 4px
+      background-color: #6a7989
+      transition: transform 0.3s
+
+    &::before
+      top: 0
+
+    &::after
+      bottom: 0
+
+  .su-input__label-content
+    transition: transform 0.3s
+
+  // 激活状态
+  &.su-input--filled .su-input__label,
+  .su-input__field:focus + .su-input__label
+    &::before
+      transform: translate3d(0, -(lebel-decorate-active-translateY), 0)
+
+    &::after
+      transform: translate3d(0, lebel-decorate-active-translateY, 0)
+
+    .su-input__label-content
+      transform: translate3d(0, label-active-translateY, 0)
+
