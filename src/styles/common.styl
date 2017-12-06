@@ -1,0 +1,30 @@
+html *,
+html *::before,
+html *::after
+  box-sizing: border-box
+
+.su-input
+  position: relative
+  display: inline-block
+  width: input-width
+  line-height: 1
+  font-size: input-font-size
+
+  .su-input__field
+    display: block
+    width: 100%
+    height: input-height
+    border: none
+    font-size: inherit
+    font-weight: bold
+
+    &:focus
+      outline: none
+
+  .su-input__label
+    font-size: label-font-size
+    font-weight: bold
+
+  .su-input__label-content
+    display: block
+    width: 100%
