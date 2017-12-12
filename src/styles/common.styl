@@ -9,21 +9,27 @@ html *::after
   width: input-width
   line-height: 1
   font-size: input-font-size
+  text-align: left
 
   .su-input__field
     display: block
     width: 100%
     height: input-height
     border: none
-    font-size: inherit
+    color: inherit
+    font-size: field-font-size
     font-weight: bold
 
     &:focus
       outline: none
 
   .su-input__label
+    display: block
+    width: 100%
     font-size: label-font-size
     font-weight: bold
+    color: label-color
+    pointer-events: none
 
   .su-input__label-content
     display: block
