@@ -18,6 +18,7 @@
     props: {
       value: String,
       label: String,
+
       type: {
         type: String,
         default: 'haruki',

@@ -1,10 +1,16 @@
 
 padding-horizontal = 15px
-field-font-size = 26px
+
 label-padding-vertical = (input-height - label-font-size) / 2
 lebel-decorate-active-translateY = 10px
-input-margin-top = label-font-size + lebel-decorate-active-translateY * 2 + 5
-label-active-translateY = -(input-height / 2 + label-font-size + lebel-decorate-active-translateY)
+label-active-translateY = -(input-height / 2 + label-font-size * 1.2 + lebel-decorate-active-translateY)
+
+input-margin-top = (label-font-size + lebel-decorate-active-translateY * 2) * 1.5
+
+$input__label--vc
+  position: absolute
+  padding: label-padding-vertical padding-horizontal
+  height: input-height
 
 .su-input--haruki
   margin-top: input-margin-top
@@ -13,18 +19,12 @@ label-active-translateY = -(input-height / 2 + label-font-size + lebel-decorate-
     position: relative
     padding: 0 padding-horizontal
     background: transparent
-    color: #afb5bb
-    font-size: field-font-size
+    color: field-color
 
   .su-input__label
-    position: absolute
-    top: 0
-    display: block
-    padding: label-padding-vertical padding-horizontal
-    width: 100%
-    height: input-height
-    color: #6a7989
-    pointer-events: none
+    @extend $input__label--vc
+
+    bottom: 0
 
     &::before,
     &::after
@@ -34,7 +34,7 @@ label-active-translateY = -(input-height / 2 + label-font-size + lebel-decorate-
       z-index: -1
       width: 100%
       height: 4px
-      background-color: #6a7989
+      background-color: status-color-primary
       transition: transform 0.3s
 
     &::before
@@ -57,4 +57,3 @@ label-active-translateY = -(input-height / 2 + label-font-size + lebel-decorate-
 
     .su-input__label-content
       transform: translate3d(0, label-active-translateY, 0)
-
