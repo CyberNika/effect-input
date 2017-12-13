@@ -1,0 +1,39 @@
+
+
+.su-input--minoru
+
+  .su-input__field
+    padding: 0 15px
+    color: #eca29b
+    background: #fff
+    box-shadow: 0 0 0 2px transparent
+    transition: box-shadow 0.3s
+
+  .su-input__label
+    padding: 15px 5px
+
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      z-index: -1
+      width: 100%
+      height: input-height
+      box-shadow: 0 0 0 0
+      color: rgba(199, 152, 157, 0.6)
+
+  // 激活状态
+  &.su-input--filled .su-input__field,
+  .su-input__field:focus
+    box-shadow: 0px 0px 0px 2px #eca29b
+
+  &.su-input--filled .su-input__label,
+  .su-input__field:focus + .su-input__label
+    &::after
+      animation: animation-minoru-label-pseudo 0.3s forwards
+
+
+@keyframes animation-minoru-label-pseudo
+  to
+    box-shadow: 0 0 100px 50px
+    opacity: 0
