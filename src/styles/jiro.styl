@@ -25,10 +25,6 @@ $jiro-label-pseudo
     opacity: 0
     transition: opacity 0.3s
 
-    &:focus
-      opacity: 1
-      transition-delay: 0.3s
-
   .su-input__label
     @extend $input__label--vc
 
@@ -53,6 +49,11 @@ $jiro-label-pseudo
     transition: transform 0.3s 0.3s
 
   // 激活状态
+  &.su-input--filled .su-input__field,
+  .su-input__field:focus
+    opacity: 1
+    transition-delay: 0.3s
+
   &.su-input--filled .su-input__label,
   .su-input__field:focus + .su-input__label
     &::before
