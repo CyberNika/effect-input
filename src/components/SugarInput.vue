@@ -6,7 +6,11 @@
       class="su-input__field">
 
     <label for="" class="su-input__label">
-      <span class="su-input__label-content">{{ label }}</span>
+      <span class="su-input__label-content">
+        <slot name="label">
+          {{ label }}
+        </slot>
+      </span>
     </label>
   </span>
 </template>

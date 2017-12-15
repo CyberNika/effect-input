@@ -11,9 +11,18 @@
     </header>
 
     <main>
-      <section v-for="(item, index) of inputList" :key="index" :style="{ backgroundColor: item.color }">
+      <section v-for="(item, index) of inputList" :key="index" :style="{ backgroundColor: item.bgColor, color: item.color }">
         <h2 class="section-title">{{ item.type | upper-case }}</h2>
-        <su-input v-model="item.value" :type="item.type" label="姓名"></su-input>
+
+        <su-input v-if="!item.special" v-model="item.value" :type="item.type" label="姓名"></su-input>
+
+        <su-input v-if="item.type === 'hideo'" v-model="item.value" :type="item.type">
+          <template slot="label">
+            123
+          </template>
+        </su-input>
+
+        <su-input v-if="item.type === 'kyo'" v-model="item.value" :type="item.type" label="请输入姓名" :active-color="item.activeColor"></su-input>
       </section>
     </main>
   </div>
@@ -34,27 +43,43 @@
         inputList: [{
           type: 'haruki',
           value: '',
-          color: '#f0efee',
+          bgColor: '#f0efee',
         }, {
           type: 'hoshi',
           value: '',
-          color: '#f9f7f6',
+          bgColor: '#f9f7f6',
         }, {
           type: 'kuro',
           value: '',
-          color: '#2f3238',
+          bgColor: '#2f3238',
         }, {
           type: 'jiro',
           value: '',
-          color: '#d0d6d6',
+          bgColor: '#d0d6d6',
         }, {
           type: 'minoru',
           value: '',
-          color: '#f9f7f6',
+          bgColor: '#f9f7f6',
         }, {
           type: 'yoko',
           value: '',
-          color: '#dd665c',
+          bgColor: '#dd665c',
+        }, {
+          type: 'hideo',
+          value: '',
+          bgColor: '#f9f7f6',
+          special: true,
+        }, {
+          type: 'kyo',
+          value: '',
+          bgColor: '#e8e8e8',
+          special: true,
+          activeColor: 'rgba(11, 43, 205, 0.6)',
+        }, {
+          type: 'akira',
+          value: '',
+          bgColor: '#2f3238',
+          color: '#fff',
         }],
       }
     }
@@ -84,6 +109,10 @@
   header p,
   header .reference-link {
     color: #c3c8cd;
+  }
+
+  main {
+    font-size: 16px;
   }
 
   section {
