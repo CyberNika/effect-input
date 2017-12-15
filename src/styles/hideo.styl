@@ -1,0 +1,41 @@
+
+label-bgc = #8a9ed8
+
+field-color = #aaa
+active-ratio = 1.5
+
+.su-input--hideo
+
+  .su-input__field
+    padding-left: field-height + 1
+    background-color: #fff
+    color: field-color
+    transition: padding-left 0.3s
+
+  .su-input__label
+    position: absolute
+    left: 0
+    top: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    width: input-height
+    height: 100%
+    background-color: label-bgc
+    transition: all 0.3s
+
+  .su-input__label-content
+    width: 1em
+    height: 1em
+    font-size: 160%
+    color: #fff
+    overflow: hidden
+
+  // 激活状态
+  // &.su-input--filled .su-input__field,
+  .su-input__field:focus
+    padding-left: (field-height / active-ratio) + 1
+
+  // &.su-input--filled .su-input__label,
+  .su-input__field:focus + .su-input__label
+    font-size: (label-font-size / active-ratio)
