@@ -2,10 +2,11 @@
   <span :class="inputClass">
     <input
       type="text"
+      ref="input"
       v-model="innerValue"
       class="su-input__field">
 
-    <label for="" class="su-input__label">
+    <label for="" class="su-input__label" @click="handleLabelClick">
       <span class="su-input__label-content">
         <slot name="label">
           {{ label }}
@@ -51,6 +52,10 @@
       },
     },
 
-    methods: {},
+    methods: {
+      handleLabelClick () {
+        this.$refs.input.focus()
+      },
+    },
   }
 </script>

@@ -8,9 +8,15 @@
       <a class="github-link" target="__blank"  href="https://github.com/XBT1/text-input-effects">
        <img src="https://img.shields.io/github/stars/XBT1/text-input-effects.svg?style=for-the-badage&label=Stars" alt="GitHub Stars">
       </a>
+
+      <div class="font-size-action">
+        <span class="font-size-action-item" @click="handleIncreaseFontSize">A+</span>
+        <span class="font-size-action-item" @click="handleResetFontSize">AC</span>
+        <span class="font-size-action-item" @click="handleDecreaseFontSize">A-</span>
+      </div>
     </header>
 
-    <main>
+    <main ref="main">
       <section v-for="(item, index) of inputList" :key="index" :style="{ backgroundColor: item.bgColor, color: item.color }">
         <h2 class="section-title">{{ item.type | upper-case }}</h2>
 
@@ -52,6 +58,7 @@
           type: 'kuro',
           value: '',
           bgColor: '#2f3238',
+          color: '#fff',
         }, {
           type: 'jiro',
           value: '',
@@ -80,9 +87,35 @@
           value: '',
           bgColor: '#2f3238',
           color: '#fff',
+        }, {
+          type: 'ichiro',
+          value: '',
+          bgColor: '#f9f7f6',
         }],
       }
-    }
+    },
+
+    methods: {
+      increaseFontSize (value = 4) {
+        const defaultFontSize = 16
+        const mainEle = this.$refs.main
+        const fontSize = mainEle.style.fontSize ? mainEle.style.fontSize.replace('px', '') : defaultFontSize
+        const targetFontSize = value !== null ? (Number(fontSize) + value) : defaultFontSize
+
+        if (targetFontSize <= 10) return
+
+        mainEle.style.fontSize = `${targetFontSize}px`
+      },
+      handleIncreaseFontSize () {
+        this.increaseFontSize(4)
+      },
+      handleResetFontSize () {
+        this.increaseFontSize(null)
+      },
+      handleDecreaseFontSize () {
+        this.increaseFontSize(-4)
+      },
+    },
   }
 </script>
 
@@ -124,6 +157,12 @@
     margin-bottom: 50px;;
     font-size: 32px;
     opacity: 0.1;
+  }
+
+  .font-size-action-item {
+    display: inline-block;
+    padding: 4px 8px;
+    cursor: pointer;
   }
 </style>
 
