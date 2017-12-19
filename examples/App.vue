@@ -20,15 +20,15 @@
       <section v-for="(item, index) of inputList" :key="index" :style="{ backgroundColor: item.bgColor, color: item.color }">
         <h2 class="section-title">{{ item.type | upper-case }}</h2>
 
-        <su-input v-if="!item.special" v-model="item.value" :type="item.type" label="姓名"></su-input>
-
         <su-input v-if="item.type === 'hideo'" v-model="item.value" :type="item.type">
           <template slot="label">
-            123
+            <span class="hideo-icon"></span>
           </template>
         </su-input>
 
-        <su-input v-if="item.type === 'kyo'" v-model="item.value" :type="item.type" label="请输入姓名" :active-color="item.activeColor"></su-input>
+        <su-input v-else-if="item.type === 'kyo'" v-model="item.value" :type="item.type" label="请输入姓名" :active-color="item.activeColor"></su-input>
+
+        <su-input v-else v-model="item.value" :type="item.type" label="姓名"></su-input>
       </section>
     </main>
   </div>
@@ -75,12 +75,10 @@
           type: 'hideo',
           value: '',
           bgColor: '#f9f7f6',
-          special: true,
         }, {
           type: 'kyo',
           value: '',
           bgColor: '#e8e8e8',
-          special: true,
           activeColor: 'rgba(11, 43, 205, 0.6)',
         }, {
           type: 'akira',
@@ -91,6 +89,25 @@
           type: 'ichiro',
           value: '',
           bgColor: '#f9f7f6',
+        }, {
+          type: 'juro',
+          value: '',
+          color: '#fff',
+          bgColor: '#38a9ea',
+        }, {
+          type: 'madoka',
+          value: '',
+          color: '#fff',
+          bgColor: '#2f3238',
+        }, {
+          type: 'kaede',
+          value: '',
+          bgColor: '#f9f7f6',
+        }, {
+          type: 'isao',
+          value: '',
+          color: '#fff',
+          bgColor: '#3d4444',
         }],
       }
     },
@@ -163,6 +180,13 @@
     display: inline-block;
     padding: 4px 8px;
     cursor: pointer;
+  }
+
+  .hideo-icon {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url("./me.svg") center no-repeat / contain;
   }
 </style>
 

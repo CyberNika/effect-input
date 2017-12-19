@@ -1,0 +1,32 @@
+
+kaede-transition-timing-function = cubic-bezier(0.2, 1, 0.3, 1)
+
+.su-input--kaede
+  overflow: hidden
+
+  .su-input__field
+    padding: 0 0.8em
+    width: 60%
+    background: #fff
+    color: #9dabba
+    transform: translate3d(-100%, 0, 0)
+    transition: transform 0.5s
+    transition-timing-function: kaede-transition-timing-function
+
+  .su-input__label
+    @extend $input__label--vc
+
+    top: 0
+    background: #efeeee
+    transition: transform 0.5s
+    transition-timing-function: kaede-transition-timing-function
+
+  // 激活状态
+  &.su-input--filled,
+  .su-input__field:focus
+    transform: translate3d(0, 0, 0)
+    transition-delay: 0.06s
+
+  &.su-input--filled .su-input__label,
+  .su-input__field:focus + .su-input__label
+    transform: translate3d(60%, 0, 0)

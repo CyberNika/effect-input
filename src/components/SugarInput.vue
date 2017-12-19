@@ -1,5 +1,39 @@
 <template>
-  <span :class="inputClass">
+  <span :class="inputClass" v-if="type === 'isao'">
+    <input
+      :name="name"
+      :readonly="readonly"
+      type="text"
+      ref="input"
+      v-model="innerValue"
+      class="su-input__field">
+
+    <label for="" class="su-input__label" @click="handleLabelClick" :data-content="label">
+      <span class="su-input__label-content">
+        {{ label }}
+      </span>
+    </label>
+  </span>
+
+  <span :class="inputClass" v-else-if="type === 'madoka'">
+    <input
+      type="text"
+      ref="input"
+      v-model="innerValue"
+      class="su-input__field">
+
+    <label for="" class="su-input__label" @click="handleLabelClick">
+      <svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+        <path d="m0, 0l404, 0l0, 77l-404, 0l0, -77z"></path>
+      </svg>
+
+      <span class="su-input__label-content">
+        {{ label }}
+      </span>
+    </label>
+  </span>
+
+  <span :class="inputClass" v-else>
     <input
       type="text"
       ref="input"
@@ -23,6 +57,8 @@
     props: {
       value: String,
       label: String,
+      name: String,
+      readonly: Boolean,
 
       type: {
         type: String,
@@ -30,10 +66,6 @@
       },
     },
 
-    data () {
-      return {
-      }
-    },
     computed: {
       inputClass () {
         return {
@@ -54,6 +86,7 @@
 
     methods: {
       handleLabelClick () {
+        console.log(1111)
         this.$refs.input.focus()
       },
     },
