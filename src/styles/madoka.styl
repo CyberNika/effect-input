@@ -1,0 +1,41 @@
+
+input-margin-bottom = 1em + label-font-size
+active-label-content-translateY = input-height - label-font-size + input-margin-bottom / 2
+
+.su-input--madoka
+  margin-bottom: input-margin-bottom
+  color: #7a7593
+
+  // .su-input__field
+
+  .su-input__label
+    @extend $input__label--vc
+
+    top: 0
+
+    .graphic
+      position: absolute
+      top: 0
+      left: 0
+      fill: none
+      transform: scale3d(1, -1, 1)
+      transition: stroke-dashoffset 0.3s
+      pointer-events: none
+      stroke: #7A7593
+      stroke-width: 4px
+      stroke-dasharray: 962
+      stroke-dashoffset: 558
+
+  .su-input__label-content
+    transform-origin: 0 50%
+    transition: transform 0.3s
+
+  // 激活状态
+  &.su-input--filled .su-input__label,
+  .su-input__field:focus + .su-input__label
+
+    .graphic
+      stroke-dashoffset: 0
+
+    .su-input__label-content
+      transform: scale3d(0.81, 0.81, 1) translate3d(0, active-label-content-translateY, 0)
