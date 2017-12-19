@@ -86,7 +86,6 @@
 
     methods: {
       handleLabelClick () {
-        console.log(1111)
         this.$refs.input.focus()
       },
     },

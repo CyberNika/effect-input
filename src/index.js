@@ -1,5 +1,9 @@
-import Vue from 'vue'
-
 import SugarInput from './components/SugarInput.vue'
 
-Vue.component('su-input', SugarInput)
+export { SugarInput }
+
+export default {
+  install (Vue) {
+    Vue.component('su-input', SugarInput)
+  },
+}
