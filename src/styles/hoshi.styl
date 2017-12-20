@@ -6,16 +6,16 @@ label-active-translateY = -(input-height + label-font-size) / 2
 label-padding-top = (input-height - label-font-size) / 2
 label-padding-bottom = (input-height - label-font-size) / 2 - 0.6
 
-.su-input--hoshi
+.effect-input--hoshi
   margin-top: input-margin-top
 
-  .su-input__field
+  .effect-input__field
     position: relative
     padding: 0 padding-horizontal
     height: input-height - 10
     color: #595f6e
 
-  .su-input__label
+  .effect-input__label
     position: absolute
     top: 0
     padding: label-padding-top padding-horizontal label-padding-bottom
@@ -33,16 +33,16 @@ label-padding-bottom = (input-height - label-font-size) / 2 - 0.6
       background-color: status-color-info
       transition: width 0.3s
 
-  // .su-input__label-content
+  // .effect-input__label-content
   //   transition: transform 0.3s
 
   // 激活状态
-  &.su-input--filled .su-input__label,
-  .su-input__field:focus + .su-input__label
+  &.effect-input--filled .effect-input__label,
+  .effect-input__field:focus + .effect-input__label
     &::after
       width: 100%
 
-    .su-input__label-content
+    .effect-input__label-content
       animation: animation-hoshi-label 0.3s forwards
 
 @keyframes animation-hoshi-label

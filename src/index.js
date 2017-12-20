@@ -1,9 +1,9 @@
-import SugarInput from './components/SugarInput.vue'
+import EffectInput from './components/EffectInput.vue'
 
-export { SugarInput }
+export { EffectInput }
 
 export default {
   install (Vue) {
-    Vue.component('su-input', SugarInput)
+    Vue.component(EffectInput.name, EffectInput)
   },
 }

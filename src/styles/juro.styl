@@ -5,17 +5,17 @@ input-margin-top = 1em
 
 juro-color = #1784cd
 
-.su-input--juro
+.effect-input--juro
   margin-top: input-margin-top
 
-  .su-input__field
+  .effect-input__field
     position: absolute;
     bottom: 0.35em
     padding: 0 1em
     color: juro-color
     font-size: 1em
 
-  .su-input__label
+  .effect-input__label
     background: #fff
     cursor: text
 
@@ -29,20 +29,20 @@ juro-color = #1784cd
       border: 0 solid transparent
       transition: border-width 0.3s, border-color 0.3s
 
-  .su-input__label-content
+  .effect-input__label-content
     padding: 2em input-margin-top
     transition: transform 0.3s, color 0.3s
     text-rendering: geometricPrecision
     transform-origin: 0 50%
 
   // 激活状态
-  &.su-input--filled .su-input__label,
-  .su-input__field:focus + .su-input__label
+  &.effect-input--filled .effect-input__label,
+  .effect-input__field:focus + .effect-input__label
     &::before
       border-width: 0.5em
       border-color: juro-color
       border-top-width: 2em
 
-    .su-input__label-content
+    .effect-input__label-content
       color: #fff
       transform: translate3d(0, active-label-content-translateY, 0) scale3d(0.75, 0.75, 1) translateZ(1px)

@@ -7,15 +7,15 @@ label-border-width = 0.25em
 label-border = label-border-width solid input-color
 label-active-translateY = - (input-height + label-font-size + input-margin-top) / 2
 
-.su-input--akira
+.effect-input--akira
   margin-top: input-margin-top
   text-align: center
 
-  .su-input__field
+  .effect-input__field
     color: input-color
     text-align: center
 
-  .su-input__label
+  .effect-input__label
     @extend $input__label--vc
 
     top: 0
@@ -31,14 +31,14 @@ label-active-translateY = - (input-height + label-font-size + input-margin-top) 
       border: label-border
       transition: border-width 0.3s
 
-  .su-input__label-content
+  .effect-input__label-content
     transition: transform 0.3s
 
   // 激活状态
-  &.su-input--filled .su-input__label,
-  .su-input__field:focus + .su-input__label
+  &.effect-input--filled .effect-input__label,
+  .effect-input__field:focus + .effect-input__label
     &::after
       border-width: (label-border-width / 2)
 
-    .su-input__label-content
+    .effect-input__label-content
       transform: translate3d(0, label-active-translateY, 0)

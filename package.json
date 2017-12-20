@@ -1,7 +1,7 @@
 {
-  "name": "text-input-effects",
+  "name": "effect-input",
   "description": "Text Input Effects for Vue.js - Simple ideas for enhancing text input interactions",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "author": "XBT1 <xbtop1@gmail.com>",
   "main": "dist/index.common.js",
   "files": [
@@ -54,12 +54,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/XBT1/text-input-effects.git"
+    "url": "https://github.com/XBT1/effect-input.git"
   },
   "bugs": {
-    "url": "https://github.com/XBT1/text-input-effects/issues"
+    "url": "https://github.com/XBT1/effect-input/issues"
   },
-  "homepage": "https://github.com/XBT1/text-input-effects",
+  "homepage": "https://github.com/XBT1/effect-input",
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
