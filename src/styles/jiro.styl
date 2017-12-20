@@ -15,17 +15,17 @@ $jiro-label-pseudo
   height: 100%
   transition: transform 0.3s
 
-.su-input--jiro
+.effect-input--jiro
   margin-top: input-margin-top
 
-  .su-input__field
+  .effect-input__field
     padding: 0 padding-horizontal
     color: input-color
     background-color: transparent
     opacity: 0
     transition: opacity 0.3s
 
-  .su-input__label
+  .effect-input__label
     @extend $input__label--vc
 
     top: 0
@@ -45,17 +45,17 @@ $jiro-label-pseudo
       transform-origin: 50% 0%
       z-index: -1
 
-  .su-input__label-content
+  .effect-input__label-content
     transition: transform 0.3s 0.3s
 
   // 激活状态
-  &.su-input--filled .su-input__field,
-  .su-input__field:focus
+  &.effect-input--filled .effect-input__field,
+  .effect-input__field:focus
     opacity: 1
     transition-delay: 0.3s
 
-  &.su-input--filled .su-input__label,
-  .su-input__field:focus + .su-input__label
+  &.effect-input--filled .effect-input__label,
+  .effect-input__field:focus + .effect-input__label
     &::before
       transform: translate3d(0, 0, 0)
       transition-delay: 0
@@ -65,6 +65,6 @@ $jiro-label-pseudo
       transition-delay: 0.3s
       transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1)
 
-    .su-input__label-content
+    .effect-input__label-content
       transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1)
       transform: translate3d(0, label-active-translateY, 0)

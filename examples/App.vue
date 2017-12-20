@@ -3,7 +3,6 @@
     <header>
       <img class="vue-logo" src="https://vuejs.org/images/logo.png" alt="Vue.js">
       <h1>Text Input Effects</h1>
-      <p>Inspired by <a class="reference-link" target="__blank" href="https://tympanus.net/Development/TextInputEffects">TextInputEffects</a></p>
 
       <a class="github-link" target="__blank"  href="https://github.com/XBT1/text-input-effects">
        <img src="https://img.shields.io/github/stars/XBT1/text-input-effects.svg?style=for-the-badage&label=Stars" alt="GitHub Stars">
@@ -20,17 +19,21 @@
       <section v-for="(item, index) of inputList" :key="index" :style="{ backgroundColor: item.bgColor, color: item.color }">
         <h2 class="section-title">{{ item.type | upper-case }}</h2>
 
-        <su-input v-if="item.type === 'hideo'" v-model="item.value" :type="item.type">
+        <effect-input v-if="item.type === 'hideo'" v-model="item.value" :type="item.type">
           <template slot="label">
             <span class="hideo-icon"></span>
           </template>
-        </su-input>
+        </effect-input>
 
-        <su-input v-else-if="item.type === 'kyo'" v-model="item.value" :type="item.type" label="请输入姓名" :active-color="item.activeColor"></su-input>
+        <effect-input v-else-if="item.type === 'kyo'" v-model="item.value" :type="item.type" label="请输入姓名" :active-color="item.activeColor"></effect-input>
 
-        <su-input v-else v-model="item.value" :type="item.type" label="姓名"></su-input>
+        <effect-input v-else v-model="item.value" :type="item.type" label="姓名"></effect-input>
       </section>
     </main>
+
+    <footer>
+      <p>Inspired by <a class="reference-link" target="__blank" href="https://tympanus.net/Development/TextInputEffects">TextInputEffects</a></p>
+    </footer>
   </div>
 </template>
 
@@ -151,16 +154,6 @@
     font-size: 48px;
   }
 
-  header p {
-    margin-top: 0;
-    font-size: 24px;
-  }
-
-  header p,
-  header .reference-link {
-    color: #c3c8cd;
-  }
-
   main {
     font-size: 16px;
   }
@@ -187,6 +180,22 @@
     width: 100%;
     height: 100%;
     background: url("./me.svg") center no-repeat / contain;
+  }
+
+  footer {
+    background-color: #f9f7f6;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  footer p,
+  footer .reference-link {
+    color: #c3c8cd;
   }
 </style>
 

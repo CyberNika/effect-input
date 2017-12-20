@@ -16,16 +16,16 @@ $input__label--vc
   // pointer-events: none
   cursor: text
 
-.su-input--haruki
+.effect-input--haruki
   margin-top: input-margin-top
 
-  .su-input__field
+  .effect-input__field
     position: relative
     padding: 0 (padding-horizontal / 2)
     color: field-color
     font-size: field-font-size
 
-  .su-input__label
+  .effect-input__label
     @extend $input__label--vc
 
     bottom: 0
@@ -47,17 +47,17 @@ $input__label--vc
     &::after
       bottom: 0
 
-  .su-input__label-content
+  .effect-input__label-content
     transition: transform 0.3s
 
   // 激活状态
-  &.su-input--filled .su-input__label,
-  .su-input__field:focus + .su-input__label
+  &.effect-input--filled .effect-input__label,
+  .effect-input__field:focus + .effect-input__label
     &::before
       transform: translate3d(0, -(lebel-decorate-active-translateY), 0)
 
     &::after
       transform: translate3d(0, lebel-decorate-active-translateY, 0)
 
-    .su-input__label-content
+    .effect-input__label-content
       transform: translate3d(0, label-active-translateY, 0)

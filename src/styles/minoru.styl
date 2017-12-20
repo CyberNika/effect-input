@@ -1,15 +1,15 @@
 
 
-.su-input--minoru
+.effect-input--minoru
 
-  .su-input__field
+  .effect-input__field
     padding: 0 0.95em
     color: #eca29b
     background: #fff
     box-shadow: 0 0 0 2px transparent
     transition: box-shadow 0.3s
 
-  .su-input__label
+  .effect-input__label
     padding: 0.9em 0.35em
 
     &::after
@@ -23,12 +23,12 @@
       color: rgba(199, 152, 157, 0.6)
 
   // 激活状态
-  &.su-input--filled .su-input__field,
-  .su-input__field:focus
+  &.effect-input--filled .effect-input__field,
+  .effect-input__field:focus
     box-shadow: 0 0 0 2px #eca29b
 
-  &.su-input--filled .su-input__label,
-  .su-input__field:focus + .su-input__label
+  &.effect-input--filled .effect-input__label,
+  .effect-input__field:focus + .effect-input__label
     &::after
       animation: animation-minoru-label-pseudo 0.3s forwards
 

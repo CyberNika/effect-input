@@ -4,15 +4,15 @@ label-bgc = #8a9ed8
 field-color = #aaa
 active-ratio = 1.5
 
-.su-input--hideo
+.effect-input--hideo
 
-  .su-input__field
+  .effect-input__field
     padding-left: field-height + 1
     background-color: #fff
     color: field-color
     transition: padding-left 0.3s
 
-  .su-input__label
+  .effect-input__label
     position: absolute
     left: 0
     top: 0
@@ -24,7 +24,7 @@ active-ratio = 1.5
     background-color: label-bgc
     transition: all 0.3s
 
-  .su-input__label-content
+  .effect-input__label-content
     width: 1em
     height: 1em
     font-size: 160%
@@ -32,10 +32,10 @@ active-ratio = 1.5
     overflow: hidden
 
   // 激活状态
-  // &.su-input--filled .su-input__field,
-  .su-input__field:focus
+  // &.effect-input--filled .effect-input__field,
+  .effect-input__field:focus
     padding-left: (field-height / active-ratio) + 1
 
-  // &.su-input--filled .su-input__label,
-  .su-input__field:focus + .su-input__label
+  // &.effect-input--filled .effect-input__label,
+  .effect-input__field:focus + .effect-input__label
     font-size: (label-font-size / active-ratio)

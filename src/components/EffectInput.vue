@@ -6,10 +6,10 @@
       type="text"
       ref="input"
       v-model="innerValue"
-      class="su-input__field">
+      class="effect-input__field">
 
-    <label for="" class="su-input__label" @click="handleLabelClick" :data-content="label">
-      <span class="su-input__label-content">
+    <label for="" class="effect-input__label" @click="handleLabelClick" :data-content="label">
+      <span class="effect-input__label-content">
         {{ label }}
       </span>
     </label>
@@ -20,14 +20,14 @@
       type="text"
       ref="input"
       v-model="innerValue"
-      class="su-input__field">
+      class="effect-input__field">
 
-    <label for="" class="su-input__label" @click="handleLabelClick">
+    <label for="" class="effect-input__label" @click="handleLabelClick">
       <svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
         <path d="m0, 0l404, 0l0, 77l-404, 0l0, -77z"></path>
       </svg>
 
-      <span class="su-input__label-content">
+      <span class="effect-input__label-content">
         {{ label }}
       </span>
     </label>
@@ -38,10 +38,10 @@
       type="text"
       ref="input"
       v-model="innerValue"
-      class="su-input__field">
+      class="effect-input__field">
 
-    <label for="" class="su-input__label" @click="handleLabelClick">
-      <span class="su-input__label-content">
+    <label for="" class="effect-input__label" @click="handleLabelClick">
+      <span class="effect-input__label-content">
         <slot name="label">
           {{ label }}
         </slot>
@@ -52,7 +52,7 @@
 
 <script>
   export default {
-    name: 'SugarInput',
+    name: 'EffectInput',
 
     props: {
       value: String,
@@ -69,9 +69,9 @@
     computed: {
       inputClass () {
         return {
-          'su-input': true,
-          'su-input--filled': !!this.innerValue,
-          [`su-input--${this.type}`]: true,
+          'effect-input': true,
+          'effect-input--filled': !!this.innerValue,
+          [`effect-input--${this.type}`]: true,
         }
       },
       innerValue: {
