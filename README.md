@@ -120,6 +120,19 @@ $ npm run build # build:package & build:example
 ## TODOs
 
 - 添加更多主题
+  - SET 2
+    - [x] `manami`
+    - [x] `nariko`
+    - [ ] `nao`
+    - [ ] `yoshiko`
+    - [ ] `shoko`
+    - [ ] `chisato`
+    - [ ] `makiko`
+    - [ ] `sae`
+    - [ ] `kozakura`
+    - [ ] `fumi`
+    - [ ] `ruri`
+    - [ ] `kohana`
 
 ## 更新日志
 
