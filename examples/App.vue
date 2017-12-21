@@ -13,10 +13,23 @@
         <span class="font-size-action-item" @click="handleResetFontSize">AC</span>
         <span class="font-size-action-item" @click="handleDecreaseFontSize">A-</span>
       </div>
+
+      <div class="set-action">
+        <span
+          :key="item"
+          :class="{
+            'set-action-item': true,
+            active: currentSet === item - 1,
+          }"
+          v-for="item of themeList.length"
+          @click="handleChangeSet(item - 1)">
+            SET {{ item }}
+          </span>
+      </div>
     </header>
 
     <main ref="main">
-      <section v-for="(item, index) of inputList" :key="index" :style="{ backgroundColor: item.bgColor, color: item.color }">
+      <section v-for="(item, index) of themeList[currentSet]" :key="index" :style="{ backgroundColor: item.bgColor, color: item.color }">
         <h2 class="section-title">{{ item.type | upper-case }}</h2>
 
         <effect-input v-if="item.type === 'hideo'" v-model="item.value" :type="item.type">
@@ -38,6 +51,8 @@
 </template>
 
 <script>
+  import THEME_LIST from './themes.json'
+
   export default {
     name: 'App',
 
@@ -49,69 +64,8 @@
 
     data () {
       return {
-        inputList: [{
-          type: 'haruki',
-          value: '',
-          bgColor: '#f0efee',
-        }, {
-          type: 'hoshi',
-          value: '',
-          bgColor: '#f9f7f6',
-        }, {
-          type: 'kuro',
-          value: '',
-          bgColor: '#2f3238',
-          color: '#fff',
-        }, {
-          type: 'jiro',
-          value: '',
-          bgColor: '#d0d6d6',
-        }, {
-          type: 'minoru',
-          value: '',
-          bgColor: '#f9f7f6',
-        }, {
-          type: 'yoko',
-          value: '',
-          bgColor: '#dd665c',
-        }, {
-          type: 'hideo',
-          value: '',
-          bgColor: '#f9f7f6',
-        }, {
-          type: 'kyo',
-          value: '',
-          bgColor: '#e8e8e8',
-          activeColor: 'rgba(11, 43, 205, 0.6)',
-        }, {
-          type: 'akira',
-          value: '',
-          bgColor: '#2f3238',
-          color: '#fff',
-        }, {
-          type: 'ichiro',
-          value: '',
-          bgColor: '#f9f7f6',
-        }, {
-          type: 'juro',
-          value: '',
-          color: '#fff',
-          bgColor: '#38a9ea',
-        }, {
-          type: 'madoka',
-          value: '',
-          color: '#fff',
-          bgColor: '#2f3238',
-        }, {
-          type: 'kaede',
-          value: '',
-          bgColor: '#f9f7f6',
-        }, {
-          type: 'isao',
-          value: '',
-          color: '#fff',
-          bgColor: '#3d4444',
-        }],
+        currentSet: window.location.hash ? Number(window.location.hash.replace('#', '')) : 0,
+        themeList: THEME_LIST.map((list) => list.map(item => ({ ...item, value: '' }))),
       }
     },
 
@@ -126,6 +80,7 @@
 
         mainEle.style.fontSize = `${targetFontSize}px`
       },
+
       handleIncreaseFontSize () {
         this.increaseFontSize(4)
       },
@@ -134,6 +89,11 @@
       },
       handleDecreaseFontSize () {
         this.increaseFontSize(-4)
+      },
+
+      handleChangeSet (index) {
+        this.currentSet = index
+        window.location.hash = index
       },
     },
   }
@@ -173,6 +133,26 @@
     display: inline-block;
     padding: 4px 8px;
     cursor: pointer;
+    color: #555;
+  }
+
+  .font-size-action,
+  .set-action {
+    margin-top: 10px;
+  }
+
+  .set-action-item {
+    padding: 0 2px;
+    margin: 5px 10px;
+    color: #aaa;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+  }
+
+  .set-action-item.active {
+    color: #333;
+    border-bottom-color: #333;
+    font-weight: bold;
   }
 
   .hideo-icon {

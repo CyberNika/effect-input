@@ -1,0 +1,68 @@
+
+active-label-content-translateY = input-height - label-font-size * 1.5
+input-padding-bottom = label-font-size * 2
+
+manami-transition-timing-function = cubic-bezier(0, 0.25, 0.5, 1)
+
+$manami-label-pseudo
+  content: ""
+  position: absolute
+  left: 0
+  width: 100%
+  background-color: #a8a8a8
+  transition-timing-function: manami-transition-timing-function
+
+.effect-input--manami
+  padding-bottom: input-padding-bottom
+  height: input-height + input-padding-bottom
+  overflow: hidden
+
+  .effect-input__field
+    padding: 0.5em
+    color: #f9f7f6
+
+  .effect-input__label
+    @extend $input__label--vc
+
+    top: 0
+    padding-left: 0.2em
+    padding-right: 0.2em
+
+    &::before
+      @extend $manami-label-pseudo
+
+      top: -100%
+      height: 100%
+      transition: top 0.2s
+      z-index: -1
+
+    &::after
+      @extend $manami-label-pseudo
+
+      bottom: 0
+      height: 0.1em
+      opacity: 1
+      transition: opacity 0.2s
+
+  .effect-input__label-content
+    font-size: 1.25em
+    transition-timing-function: manami-transition-timing-function
+    transition: transform 0.2s, color 0.2s
+    transform-origin: 0 0
+
+  // 激活状态
+  &.effect-input--filled .effect-input__field,
+  .effect-input__field:focus
+    // transform: scale3d(1, 1, 1)
+
+  &.effect-input--filled .effect-input__label,
+  .effect-input__field:focus + .effect-input__label
+    &::before
+      top: 0
+
+    &::after
+      opacity: 0
+
+    .effect-input__label-content
+      color: #cbc4c6
+      transform: translate3d(0, active-label-content-translateY, 0) scale3d(0.65, 0.65, 1)

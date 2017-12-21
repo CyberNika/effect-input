@@ -1,0 +1,76 @@
+[
+  [
+    {
+      "type": "haruki",
+      "bgColor": "#f0efee"
+    },
+    {
+      "type": "hoshi",
+      "bgColor": "#f9f7f6"
+    },
+    {
+      "type": "kuro",
+      "bgColor": "#2f3238",
+      "color": "#fff"
+    },
+    {
+      "type": "jiro",
+      "bgColor": "#d0d6d6"
+    },
+    {
+      "type": "minoru",
+      "bgColor": "#f9f7f6"
+    },
+    {
+      "type": "yoko",
+      "bgColor": "#dd665c"
+    },
+    {
+      "type": "hideo",
+      "bgColor": "#f9f7f6"
+    },
+    {
+      "type": "kyo",
+      "bgColor": "#e8e8e8",
+      "activeColor": "rgba(11, 43, 205, 0.6)"
+    },
+    {
+      "type": "akira",
+      "bgColor": "#2f3238",
+      "color": "#fff"
+    },
+    {
+      "type": "ichiro",
+      "bgColor": "#f9f7f6"
+    },
+    {
+      "type": "juro",
+      "color": "#fff",
+      "bgColor": "#38a9ea"
+    },
+    {
+      "type": "madoka",
+      "color": "#fff",
+      "bgColor": "#2f3238"
+    },
+    {
+      "type": "kaede",
+      "bgColor": "#f9f7f6"
+    },
+    {
+      "type": "isao",
+      "color": "#fff",
+      "bgColor": "#3d4444"
+    }
+  ],
+  [
+    {
+      "type": "manami",
+      "bgColor": "#e8e8e8"
+    },
+    {
+      "type": "nariko",
+      "bgColor": "#d0d6d6"
+    }
+  ]
+]
